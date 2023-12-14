@@ -1,0 +1,32 @@
+package com.qa.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySources;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class CoursesDAO {
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	private final String getNoOfCourses = "select count(*) from course";
+	private final String getCourseNameByCourseNo = "select course_name from course where course_no=? ";
+	private final String getCourseDetail = "select course_no,course_name,duration,fee from course where course_no=?";
+
+	public CoursesDAO(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	
+	
+	public int getNoOfCourses() {
+		return jdbcTemplate.queryForObject(getNoOfCourses, Integer.class);
+	}
+	
+	public String getNameOfCoursesByCourseNo(int courseNo) {
+		return jdbcTemplate.queryForObject(getCourseNameByCourseNo, String.class, courseNo);
+	}
+	
+	
+	
+	
+}

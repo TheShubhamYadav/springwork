@@ -1,0 +1,39 @@
+package com.qa.test;
+
+import java.util.Map;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.qa.bo.CourseBO;
+import com.qa.config.JavaConfig;
+import com.qa.dao.CoursesDAO;
+
+public class QueryAppTest {
+	public static void main(String[] args) {
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(JavaConfig.class);
+		CoursesDAO coursesDao = applicationContext.getBean("coursesDAO",CoursesDAO.class);
+		
+//		System.out.println("total no of courses : "+coursesDao.getNoOfCourses()); 
+		
+//		System.out.println("name of course : "+coursesDao.getNameOfCoursesByCourseNo(101));
+		
+//		System.out.println(coursesDao.getCourseDetail(101).toString());
+		
+//		coursesDao.getDetailsofCourses(4000).forEach(System.out::println);
+		
+//		System.out.println(coursesDao.getOneCourseInfo(105).toString());
+		
+//		coursesDao.getCoursesInfoByCourseName("Java").forEach(System.out::println);
+		
+		CourseBO course = new CourseBO();
+		course.setCourse_No(108);
+		course.setCourse_name("SQL");
+		course.setDuration(2);
+		course.setFee(2000);
+		System.out.println("no of row inserted : "+coursesDao.saveCourse(course));
+		
+		
+	}
+
+}

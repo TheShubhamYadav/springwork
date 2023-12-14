@@ -1,0 +1,16 @@
+package com.qa.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.qa.config.JavaConfig;
+import com.qa.dao.CoursesDAO;
+
+public class QueryForObjectTest {
+	public static void main(String[] args) {
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(JavaConfig.class);
+		CoursesDAO coursesDAO = applicationContext.getBean("coursesDAO",CoursesDAO.class);
+		
+	}
+
+}

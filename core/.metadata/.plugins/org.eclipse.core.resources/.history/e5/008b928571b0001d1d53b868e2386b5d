@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="messagewriter" class="com.strategydp.beans.MessageWriter">
+	<
+	</bean>
+	<bean id="htmlconverter" class="com.strategydp.converters.HTMLMessageConverterImpl"/>
+	<bean id="pdfconverter" class="com.strategydp.converters.PDFMessageConverterImpl"/>
+</beans>

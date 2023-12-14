@@ -1,0 +1,11 @@
+package com.pagination.config;
+
+import javax.sql.DataSource;
+
+public class JavaConfig {
+	
+	public DataSource dataSource(String driverClass,String url,String user,String password) {
+		
+	}
+
+}

@@ -1,0 +1,74 @@
+package com.qa.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySources;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import com.qa.bo.CourseBO;
+import com.qa.bo.StudentBO;
+
+@Repository
+public class CoursesDAO {
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	private final String getNoOfCourses = "select count(*) from course";
+	private final String getCourseNameByCourseNo = "select course_name from course where course_no=? ";
+	private final String getCourseDetail = "select course_no,course_name,duration,fee from course where course_no=?";
+	private final String getDetailsofCourses = "select course_no,course_name,duration,fee from course where fee>?";
+	private final String getOneCourseInfo = "select course_no,course_name,fee from course where course_no=?";
+	private final String getCoursesInfoByCourseName = "select course_no,course_name,fee from course where course_name like ?";
+
+	public CoursesDAO(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	
+	
+	public int getNoOfCourses() {
+		return jdbcTemplate.queryForObject(getNoOfCourses, Integer.class);
+	}
+	
+	public String getNameOfCoursesByCourseNo(final int courseNo) {
+		return jdbcTemplate.queryForObject(getCourseNameByCourseNo, String.class, courseNo);
+	}
+	
+	public CourseBO getCourseDetail(final int courseNo) {
+		return jdbcTemplate.queryForObject(getCourseDetail, new CourseRowMapper() , courseNo);
+	}
+	
+	public List<CourseBO> getDetailsofCourses(final double fee){
+		return jdbcTemplate.query(getDetailsofCourses, new CourseRowMapper(), fee);
+	}
+	
+	public Map<String, Object> getOneCourseInfo(final ) 
+	
+	
+	public List<Map<String, Object>> getCoursesInfoByCourseName(final String courseName){
+		return jdbcTemplate.queryForList(getCoursesInfoByCourseName, "%"+courseName+"%");
+	}
+	
+	private final class CourseRowMapper implements RowMapper<CourseBO>{
+		@Override
+		public CourseBO mapRow(ResultSet rs, int rowNum) throws SQLException {
+			CourseBO bo = new CourseBO();
+			bo.setCourse_No(rs.getInt(1));
+			bo.setCourse_name(rs.getString(2));
+			bo.setDuration(rs.getInt(3));
+			bo.setFee(rs.getDouble(4));
+			return bo;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+}

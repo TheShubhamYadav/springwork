@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="sedanCarBuilder" class="com.ifm.beans.CarBuilder" c:carNO="101" p:manufacturer="TATA" p:model="Harrier" p:price="800000" p:airbags="true"/>
+	
+	<bean id="sedanCar" factory-bean="sedanCarBuilder" factory-method="build" c:carType="Sedan" />
+
+	<bean id="tripmaker" class="com.ifm.beans.TripMaker" p:car-ref="sedanCar"/>
+
+</beans>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;beanpostprocessor&apos;&#x0D;&#x0A;- Original project: &apos;beanpostprocessor&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     beanpostprocessor/src/main/java/core4.beanpostprocessor&#x0D;&#x0A;     beanpostprocessor/src/test/java/core4.beanpostprocessor" description="Delete elements" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;core4.beanpostprocessor" element2="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;core4" element3="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;core4.beanpostprocessor" element4="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;core4" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1683095768982" subPackages="false" version="1.0"/>
+</session>

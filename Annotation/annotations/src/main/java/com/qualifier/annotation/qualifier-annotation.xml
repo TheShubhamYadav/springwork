@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+     <bean id="radio" class="com.qualifier.annotation.Radio" />
+    <bean id="receiver1" class="com.qualifier.annotation.Receiver">
+		<property name="frequency" value="94.3"></property>
+		<qualifier value="old receiver"></qualifier>
+	</bean>
+	<bean id="receiver2" class="com.qualifier.annotation.Receiver">
+		<property name="frequency" value="94.3"></property>
+		<qualifier value="new receiver"></qualifier>
+	</bean>
+    <bean id="equalizer" class="com.qualifier.annotation.Equalizer" >
+		<property name="mode" value="jazz"></property>
+	</bean>
+    <context:annotation-config/>
+    
+    
+</beans>

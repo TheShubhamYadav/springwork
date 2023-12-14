@@ -1,0 +1,23 @@
+package com.qa.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.qa.config.JavaConfig;
+import com.qa.dao.CoursesDAO;
+
+public class QueryAppTest {
+	public static void main(String[] args) {
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(JavaConfig.class);
+		CoursesDAO coursesDao = applicationContext.getBean("coursesDAO",CoursesDAO.class);
+		
+//		System.out.println("total no of courses : "+coursesDao.getNoOfCourses()); 
+		
+//		System.out.println("name of course : "+coursesDao.getNameOfCoursesByCourseNo(101));
+		
+//		System.out.println(coursesDao.getCourseDetail(101).toString());
+		
+		coursesDao.getDetailsofCourses(4000).forEach(System.out::println);
+	}
+
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.buildship.ui.wizard.project.creation">
+		<item key="project_location" value="D:\springproj\core4\beanlifecyle"/>
+		<item key="use_default_location" value="true"/>
+		<item key="gradle_user_home" value="C:\gradle-8.0.2"/>
+		<item key="java_home" value="C:\Program Files\Java\jdk-17.0.2"/>
+	</section>
+	<section name="org.eclipse.buildship.ui.wizard.project.import">
+		<item key="project_location" value="D:\springproj\core4\lookupmethodinjection"/>
+		<item key="apply_working_sets" value="false"/>
+		<list key="working_sets">
+		</list>
+	</section>
+</section>

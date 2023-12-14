@@ -1,0 +1,17 @@
+package com.cli.test;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+
+import com.cli.beans.Game;
+
+public class CLITest {
+
+	public static void main(String[] args) {
+		BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("com/cli/common/application-context.xml"));
+		Game game = beanFactory.getBean("game",Game.class);
+		System.out.println(game);
+	}
+
+}

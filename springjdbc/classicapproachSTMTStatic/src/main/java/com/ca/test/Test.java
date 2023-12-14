@@ -1,0 +1,17 @@
+package com.ca.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.ca.dao.StudentDAO;
+
+public class Test {
+
+	public static void main(String[] args) {
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("com/ca/common/application-context.xml");
+		StudentDAO studentDAO = applicationContext.getBean("studentDao", StudentDAO.class);
+		studentDAO.getAllStudents().forEach(System.out::println);
+		
+	}
+
+}

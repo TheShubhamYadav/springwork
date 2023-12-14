@@ -1,0 +1,83 @@
+package com.ca.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCallback;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+
+public class StudentDAO {
+	private JdbcTemplate jdbcTemplate;
+	private final String getAllStudent = "select student_id,student_name,age,gender,mobile,email from student"; 
+
+	public StudentDAO(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	
+	public List<StudentBO> getAllStudents(){
+		List<StudentBO> students = null;
+//		students = jdbcTemplate.execute(new getAllStudentPreparedStatementCreator(), new getAllStudentPreparedStatementCallback());
+		students = jdbcTemplate.execute(new getAllStudentPreparedStatementCreator(),(ps)->{
+			StudentBO student = null;
+			List<StudentBO> studentList = null;
+			ResultSet rs = null;
+			
+			studentList = new ArrayList<>();
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				student = new StudentBO();
+				student.setStudentId(rs.getInt(1));
+				student.setStudentName(rs.getString(2));
+				student.setAge(rs.getInt(3));
+				student.setGender(rs.getString(4));
+				student.setMobile(rs.getString(5));
+				student.setEmail(rs.getString(6));
+				studentList.add(student);
+			}
+			return studentList;
+		});
+		return students;
+	}
+	
+	private final class getAllStudentPreparedStatementCreator implements PreparedStatementCreator{
+
+		@Override
+		public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+			PreparedStatement ps = null;
+			ps = con.prepareStatement(getAllStudent);
+			return ps;
+		}
+		
+	}
+//	
+//	private final class getAllStudentPreparedStatementCallback implements PreparedStatementCallback<List<StudentBO>>{
+//		@Override
+//		public List<StudentBO> doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
+//			StudentBO student = null;
+//			List<StudentBO> students = null;
+//			ResultSet rs = null;
+//			
+//			students = new ArrayList<>();
+//			rs = ps.executeQuery();
+//			while(rs.next()) {
+//				student = new StudentBO();
+//				student.setStudentId(rs.getInt(1));
+//				student.setStudentName(rs.getString(2));
+//				student.setAge(rs.getInt(3));
+//				student.setGender(rs.getString(4));
+//				student.setMobile(rs.getString(5));
+//				student.setEmail(rs.getString(6));
+//				students.add(student);
+//			}
+//			return students;
+//		}
+//	}
+	
+	
+}

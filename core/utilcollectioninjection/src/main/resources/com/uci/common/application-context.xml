@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	<bean id="team" class="com.uci.beans.Team">
+		<property name="players" ref="players" />
+		<property name="scorecard" ref="score"></property>
+	</bean>
+	<util:list id="players" value-type="java.lang.String"
+		list-class="java.util.ArrayList">
+		<value>Rohit Sharma</value>
+		<value>Virat Kohli</value>
+	</util:list>
+	<util:map id="score" key-type="java.lang.String" value-type="java.lang.Integer" map-class="java.util.HashMap">
+		<entry key="Rohit Sharma" value="122"/>
+		<entry key="Virat Kohli" value="187"/>
+	</util:map>
+
+</beans>

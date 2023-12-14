@@ -1,0 +1,43 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" 
+   xmlns:aop = "http://www.springframework.org/schema/aop"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+   http://www.springframework.org/schema/aop 
+   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+
+   <bean name="calc" class="com.ajaa.beans.Calculator"/>
+   <bean name="loggingaspect" class="com.ajaa.aspect.LoggingAspect"/>
+   <bean name="cachingaspect" class="com.ajaa.aspect.CachingAspect">
+	   <constructor-arg name="cache" ref="cache" ></constructor-arg>
+	</bean>
+	<bean name="cache" class="com.ajaa.helper.Cache" factory-method="getInstance"></bean>
+   
+   <aop:config>
+	   <aop:aspect ref="cachingaspect" order="1">
+		   <aop:around method="caching" pointcut="execution(int com.ajaa.beans.Calculator.add(int,int))" />
+	   </aop:aspect>
+   </aop:config>
+   
+   <aop:config>
+	   <aop:aspect ref="loggingaspect" order="2" >
+		   <aop:around method="log" pointcut="execution(int com.ajaa.beans.Calculator.add(int,int))" />
+<!--		   or-->
+<!--		   <aop:around method="log" pointcut="execution(* com.ajaa.beans.Calculator.add(int,int))" />-->
+<!--		   or-->
+<!--		   <aop:around method="log" pointcut="execution(* com.ajaa.beans.Calculator.add(*,*))" />-->
+<!--		   or-->
+<!--		   <aop:around method="log" pointcut="execution(* com.ajaa.beans.Calculator.add(..))" />-->
+<!--		   or-->
+<!--		   <aop:around method="log" pointcut="execution(* *.Calculator.add(..))" />-->
+<!--		   or-->
+<!--		   <aop:around method="log" pointcut="execution(* *.*.add(..))" />-->
+<!--		   or-->
+<!--		   <aop:around method="log" pointcut="execution(* *.*.*(..))" />-->
+		   
+	   </aop:aspect>
+   </aop:config>
+   
+
+</beans>

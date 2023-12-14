@@ -1,0 +1,50 @@
+package com.ps.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCallback;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+
+public class StudentPSDAO {
+	private JdbcTemplate jdbcTemplate;
+	private static String getStudentByName = "select * from student where student_name=?";
+
+	public StudentPSDAO(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	
+	private class getStudentByNamePreparedStatementCreator implements PreparedStatementCreator{
+		private String studentName;
+		
+		public getStudentByNamePreparedStatementCreator(String studentName) {
+			this.studentName = studentName;
+		}
+		
+		@Override
+		public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+			PreparedStatement ps = null;
+			ps = con.prepareStatement(getStudentByName);
+			ps.setString(1, studentName);
+			return ps;
+		}
+		
+	}
+	
+	private class getStudentByNamePreparedStatementCallback implements PreparedStatementCallback<List<StudentBO>> {
+
+		@Override
+		public List<StudentBO> doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
+			List<StudentBO> students = null;
+			ResultSet rs = null;
+			StudentBO student = null;
+			
+			rs = ps.executeQuery();
+		}
+	}
+}

@@ -1,0 +1,13 @@
+package com.pagination.config;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+public class JavaConfig {
+	
+	public DataSource dataSource(String driverClass,String url,String user,String password) {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource(url,user,password);
+	}
+
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.txm.dao.SubscriberDao"/>
+    <fullyQualifiedTypeName name="com.txm.bo.CustomerBO"/>
+    <fullyQualifiedTypeName name="com.txm.bo.SubscriberBO"/>
+    <fullyQualifiedTypeName name="com.txm.service.SubscriberService"/>
+    <fullyQualifiedTypeName name="com.txm.form.SubscriptionForm"/>
+    <fullyQualifiedTypeName name="org.springframework.jdbc.core.PreparedStatementCreator"/>
+    <fullyQualifiedTypeName name="org.springframework.jdbc.support.GeneratedKeyHolder"/>
+    <fullyQualifiedTypeName name="org.springframework.jdbc.support.KeyHolder"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="com.mtxm.dao.PlayerDao"/>
+    <fullyQualifiedTypeName name="com.mtxm.dao.TeamDao"/>
+    <fullyQualifiedTypeName name="com.mtxm.bo.Player"/>
+    <fullyQualifiedTypeName name="com.mtxm.bo.Team"/>
+    <fullyQualifiedTypeName name="com.mtxm.service.PlayerSelectionService"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="com.mtxm.form.TeamSelectionForm"/>
+    <fullyQualifiedTypeName name="com.mtxm.controller.NewPlayerController"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.PropertySources"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.PropertySource"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
+    <fullyQualifiedTypeName name="org.springframework.jdbc.datasource.DriverManagerDataSource"/>
+    <fullyQualifiedTypeName name="org.springframework.jdbc.core.JdbcTemplate"/>
+    <fullyQualifiedTypeName name="com.txm.dao.CustomerDao"/>
+    <fullyQualifiedTypeName name="org.springframework.transaction.PlatformTransactionManager"/>
+    <fullyQualifiedTypeName name="javax.sql.DataSource"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="org.springframework.jdbc.datasource.DataSourceTransactionManager"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Import"/>
+    <fullyQualifiedTypeName name="com.txm.config.PersistenceConfig"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScan"/>
+    <fullyQualifiedTypeName name="com.txm.controller.NewSubscriberController"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="org.springframework.transaction.annotation.EnableTransactionManagement"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.AnnotationConfigApplicationContext"/>
+    <fullyQualifiedTypeName name="com.txm.config.AppConfig"/>
+</qualifiedTypeNameHistroy>

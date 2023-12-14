@@ -1,0 +1,9 @@
+package com.pagination.dao;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class StudentDAO {
+	private JdbcTemplate jdbcTemplate;
+	private final String GET_ALL_STUDENT = "select student_id, student_name, age, gender, mobile, email from student order by student_id";
+
+}

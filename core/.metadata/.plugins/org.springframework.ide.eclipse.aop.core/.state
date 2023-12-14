@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="collectioninjection"/>
+<aop-project name="depends-on"/>
+<aop-project name="autowiring"/>
+<aop-project name="interfaceinjection"/>
+<aop-project name="utilcollectioninjection"/>
+<aop-project name="nestedbeanfactory"/>
+<aop-project name="builddesignpattern"/>
+<aop-project name="primitivesetterinjection"/>
+<aop-project name="Instancefactorymethod"/>
+<aop-project name="beanalias"/>
+<aop-project name="pcnamespace"/>
+<aop-project name="primitiveconstructorinjection"/>
+<aop-project name="setterinjection"/>
+<aop-project name="constructorinjection"/>
+</aop-reference-model>

@@ -1,0 +1,5 @@
+package com.qa.bo;
+
+public class CourseBO {
+
+}

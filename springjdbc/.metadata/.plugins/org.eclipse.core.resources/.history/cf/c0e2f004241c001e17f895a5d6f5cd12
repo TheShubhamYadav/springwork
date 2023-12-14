@@ -1,0 +1,10 @@
+package com.pagination.bo;
+
+public class CourseBO {
+	
+	private int course_no;
+	private String course_name;
+	private int duration;
+	private double fee;
+
+}

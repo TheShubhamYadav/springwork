@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;aspectj-afteradvice&apos; to &apos;aspectj-beforeadvice&apos;&#x0D;&#x0A;- Original element: &apos;aspectj-afteradvice&apos;&#x0D;&#x0A;- Renamed element: &apos;aspectj-afteradvice&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;aspectj-afteradvice&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=aspectj-afteradvice" name="aspectj-beforeadvice" references="true" stamp="1686597239182" version="1.0"/>
+</session>

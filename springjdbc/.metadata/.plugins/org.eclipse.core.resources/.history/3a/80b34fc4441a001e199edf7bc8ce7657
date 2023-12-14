@@ -1,0 +1,9 @@
+package test;
+
+public class ExternalTest {
+public static void main(String[] args) {
+	String s = "notgood";
+	char[] c = s.toCharArray();
+	System.out.println(c[1]);
+}
+}

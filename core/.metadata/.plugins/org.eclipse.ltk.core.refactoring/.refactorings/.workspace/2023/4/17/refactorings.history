@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Depends-on&apos;" deleteContents="true" description="Delete resource &apos;Depends-on&apos;" element1="/Depends-on" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1682268665983"/>
+</session>

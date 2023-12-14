@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="game" class="com.cli.beans.Game">
+		<property name="team1">
+			<list>
+				<value>Rohit Sharma</value>
+				<value>Virat Kohli</value>
+				<value>Shikhar Dhawan</value>
+				<value>Yuvraj Singh</value>
+				<value>Suresh Raina</value>
+				<value>Hardik Pandya</value>
+				<value>MS Dhoni</value>
+				<value>R Ashwin</value>
+				<value>Shami</value>
+				<value>Bumrah</value>
+				<value>Bhuvneshwar</value>
+			</list>
+		</property>
+		<property name="team2">
+			<list>
+				<value>Travis Head</value>
+				<value>Usman khwaja</value>
+				<value>Ricky Ponting</value>
+				<value>Steve Smith</value>
+				<value>Marnus labuchagne</value>
+				<value>Andrew Symonds</value>
+				<value>Shane Warne</value>
+				<value>Pat Cummins</value>
+				<value>Starc</value>
+				<value>bret lee</value>
+				<value>James Hazzlewood</value>
+			</list>
+		</property>
+		<property name="umpires">
+			<set>
+				<value>bowden</value>
+				<value>dharamsena</value>
+			</set>
+		</property>
+	</bean>
+	<bean id="game2" class="com.cli.beans.Game">
+		<property name="team1">
+			<list>
+				<value>Travis Head</value>
+				<value>Usman khwaja</value>
+				<value>Ricky Ponting</value>
+				<value>Steve Smith</value>
+				<value>Marnus labuchagne</value>
+				<value>Andrew Symonds</value>
+				<value>Shane Warne</value>
+				<value>Pat Cummins</value>
+				<value>Starc</value>
+				<value>bret lee</value>
+				<value>James Hazzlewood</value>
+			</list>
+		</property>
+		<property name="team2">
+			<list>
+				<value>Jason Roy</value>
+				<value>Alister cook</value>
+				<value>Kevin piterson</value>
+				<value>Josh Buttler</value>
+				<value>Alex Hales</value>
+				<value>Paul Collingwood</value>
+				<value>Monty Panesar</value>
+				<value>Jimmy Anderson</value>
+				<value>Hogard</value>
+				<value>Harmison</value>
+				<value>Moien Ali</value>
+			</list>
+		</property>
+		<property name="umpires">
+			<set>
+				<value>william butcher</value>
+				<value>Hughie Kalafag</value>
+			</set>
+		</property>
+	</bean>
+
+	<bean id="stadium" class="com.cli.beans.Stadium">
+		<property name="matches">
+			<map>
+				<entry key="India Vs Australia" value-ref="game" />
+				<entry key="Australia Vs England" value-ref="game2" />
+			</map>
+		</property>
+		<property name="winner">
+			<props>
+				<prop key="India Vs Australia">India</prop>
+				<prop key="Australia Vs England">Australia</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>
