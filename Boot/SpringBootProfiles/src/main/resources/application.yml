@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+database: RDBMS
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+db:
+  driver: oracle.jdbc.driver.OracleDriver
+  url: oracle:thin:@localhost:1521:orcl
+  userName: system
+  password: 1234
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+db:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/mydb
+  userName: shubham
+  password: 7089
