@@ -1,0 +1,5 @@
+book :
+  bookNo: 101
+  bookName: Physics
+  authorName: RD Sharma
+  price: 275.50
